@@ -1,0 +1,534 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Cargando...</title>
+
+        <!-- boostrap -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- boostrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+            />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- font google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <!--   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap;" rel="stylesheet" />-->
+
+
+        <!-- ======== CSS ======== -->
+        <link rel="stylesheet" href="css/AdmAlonestyle.css" />
+
+        <!-- ===== Boxicons CSS ===== -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+            rel="stylesheet"
+            />
+
+        <!-- Fontawesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            />
+
+        <script
+            type="text/javascript"
+            src="http://code.jquery.com/jquery.js"
+        ></script>
+    </h:head>
+
+    <style>
+
+
+        .container-grafic {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #0f3460;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+        }
+
+        .grafico-principal {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            height: 350px; /* Ajusta la altura como desees */
+
+        }
+
+
+        .grafico-secundario {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .grafico-secundario .card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .card .metric {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #e056fd;
+        }
+
+        canvas {
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+
+    <h:body>
+        <h:form enctype="multipart/form-data"   >
+            <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="img/ico/ico_oasis.png" alt="" />
+                        </span>
+
+                        <div class="text logo-text">
+                            <span class="name">Oasis</span>
+                            <span class="profession">Administrador</span>
+                        </div>
+                    </div>
+
+                    <i class="bx bx-chevron-right toggle" style="margin-top: 4rem"></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+                        <!-- <li class="search-box">
+                                  <i class='bx bx-search icon'></i>
+                                  <input type="text" placeholder="Buscar...">
+                              </li> -->
+
+                        <ul class="menu-links list-unstyled">
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/admin_oasis.xhtml">
+                                    <i class="bx bx-home-alt icon"></i>
+                                    <span class="text nav-text">Inicio</span>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-link">
+                              <a href="#" data-page="Usuario.html">
+                                <i class="bx bxs-user icon"></i>
+                                <span class="text nav-text">Usuarios</span>
+                              </a>
+                            </li> -->
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/usuario_admi.xhtml">
+                                    <i class="bx bxs-user icon"></i>
+                                    <span class="text nav-text">Usuarios</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="api.xhtml">
+                                    <i class='bx bxl-spring-boot icon'></i>
+                                    <span class="text nav-text">API Roles</span>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/reservas_admi.xhtml">
+                                    <i class="fa-regular fa-calendar-days icon"></i>
+                                    <span class="text nav-text">Reservaciones</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/habitaciones_admi.xhtml">
+                                    <i class="fa-solid fa-bed icon"></i>
+                                    <span class="text nav-text">Habitaciones</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/categoria_admi.xhtml">
+                                    <i class="fa-solid fa-list icon"></i>
+                                    <span class="text nav-text">Categoria</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/comentario_admi.xhtml">
+                                    <i class="fa-solid fa-comment icon"></i>
+                                    <span class="text nav-text">Comentarios</span>
+                                </a>
+                            </li>
+                            <li class="search-box">
+                                <!-- <i class='bx bx-search icon'></i>
+                                          <input type="text" placeholder="Buscar..."> -->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bottom-content">
+                        <ul class="list-unstyled">
+                            <li class="">
+                                <a class="nav-link">
+                                    <i class="bx bx-log-out icon"></i>
+                                    <h:commandButton value="Cerrar Sesión" class="text nav-text btn" action="#{userController.logout}" />
+                                </a>
+                            </li>
+
+                            <li class="mode">
+                                <div class="sun-moon">
+                                    <i class="bx bx-moon icon moon"></i>
+                                    <i class="bx bx-sun icon sun"></i>
+                                </div>
+                                <span class="mode-text text">Dark mode</span>
+
+                                <div class="toggle-switch">
+                                    <span class="switch"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="home">
+                <nav class="navbar">
+                    <div class="container-md d-flex justify-content-end align-items-center px-4">
+                        <h:graphicImage value="image/#{usuarioBean.usuario.path}"  width="38"
+                                        height="38"
+                                        class="d-inline-block align-text-top rounded-circle mr-3"/>
+
+                        <div class="color-text-navbar">
+                            <p class="mb-0 fw-bold" style="height: 20px">#{usuarioBean.usuario.nombre} #{usuarioBean.usuario.apellido}</p>
+                            <span class="fw-light" >Admin</span>
+                        </div>
+
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a
+                                class="nav-link"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                >
+                                <i class="fa-solid fa-gear fa-lg" id="gear-icon"></i>
+                            </a>
+                            <!-- Dropdown -->
+                            <ul
+                                class="dropdown-menu dropdown-menu-end mt-3"
+                                aria-labelledby="gear-icon"
+                                >
+                                <li><a class="dropdown-item" href="#">Tu perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- <img
+                          src="gif/miRey.gif"
+                          alt="Logo"
+                          width="38"
+                          height="38"
+                          class="d-inline-block align-text-top rounded-circle mr-3"
+                        /> -->
+                    </div>
+                </nav>
+
+                <div class="text" style="height: 86.8vh; overflow-y: auto">
+                    <marque class="content">
+                        <div class="container-grafic">
+                            <!-- Gráfico principal -->
+                            <div class="card grafico-principal">
+
+                                <canvas id="chart1" class="xd"></canvas>
+                            </div>
+
+                            <!-- Gráficos secundarios -->
+                            <div class="grafico-secundario">
+                                <div class="card">
+
+
+                                    <canvas id="chart2"></canvas>
+                                </div>
+                                <div class="card">
+
+
+                                    <canvas id="chart3"></canvas>
+                                </div>
+                                <div class="card">
+
+
+                                    <canvas id="chart4"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </marque>
+                </div>
+
+                <footer class="text-center py-2 footer-desing-xuan">
+                    <div class="container">
+                        <p class="mb-0">
+                            Copyright © 2024 Cesar. Diseñado con
+                            <i class="fa-regular fa-heart" style="color: #ff1a1a"></i> para el curso Diseño web Integrado, subido en Github.
+                        </p>
+                    </div>
+                </footer>
+            </section>
+
+            <script>
+                const body = document.querySelector("body"),
+                        sidebar = body.querySelector("nav"),
+                        toggle = body.querySelector(".toggle"),
+                        searchBtn = body.querySelector(".search-box"),
+                        modeSwitch = body.querySelector(".toggle-switch"),
+                        modeText = body.querySelector(".mode-text");
+
+                toggle.addEventListener("click", () => {
+                    sidebar.classList.toggle("close");
+                });
+
+                searchBtn.addEventListener("click", () => {
+                    sidebar.classList.remove("close");
+                });
+
+                modeSwitch.addEventListener("click", () => {
+                    body.classList.toggle("dark");
+
+                    if (body.classList.contains("dark")) {
+                        modeText.innerText = "Light mode";
+                    } else {
+                        modeText.innerText = "Dark mode";
+                    }
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    setTimeout(function () {
+                        document.title = "Administrador | Inicio";
+                    }, 350); // Cambia el título después de 2 segundos (2000 milisegundos)
+                });
+            </script>
+
+            <script>
+                // Arreglo de imágenes
+                const images = [
+                    'saveImage/1.jpg',
+                    'saveImage/2.png'
+                ];
+
+                // Obtener el contenedor de imágenes
+                const container = document.getElementById('imageContainer');
+
+                // Obtener el nombre del usuario desde JSF
+                const nombreUsuario = "#{usuarioBean.usuario.nombre}"; // Este valor se evalúa en el servidor
+
+                // Condición para mostrar la primera imagen si el nombre es "pk2 -"
+                if (nombreUsuario.trim() === 'pk2 -') {
+                    const img = document.createElement('img');
+                    img.src = images[0]; // Primera imagen
+                    img.alt = 'Imagen';
+                    container.appendChild(img);
+                }
+            </script>
+
+
+            <script>
+                const chartData = {
+                    chart1: {
+                        type: "line",
+                        labels: [
+                            "JAN",
+                            "FEB",
+                            "MAR",
+                            "APR",
+                            "MAY",
+                            "JUN",
+                            "JUL",
+                            "AUG",
+                            "SEP",
+                            "OCT",
+                            "NOV",
+                            "DEC",
+                        ],
+                        datasets: [
+                            {
+                                label: "Total Shipments",
+                                data: [90, 80, 100, 85, 70, 60, 80, 90, 110, 100, 120, 130],
+                                backgroundColor: "rgba(156, 39, 176, 0.2)",
+                                borderColor: "rgba(156, 39, 176, 1)",
+                                borderWidth: 2,
+                                tension: 0.4,
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                            },
+                        ],
+                    },
+                    chart2: {
+                        type: "line",
+                        labels: ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+                        datasets: [
+                            {
+                                label: "Shipments",
+                                data: [70, 80, 90, 100, 110, 120],
+                                backgroundColor: "rgba(156, 39, 176, 0.2)",
+                                borderColor: "rgba(156, 39, 176, 1)",
+                                borderWidth: 2,
+                                tension: 0.4,
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                            },
+                        ],
+                    },
+                    chart3: {
+                        type: "bar",
+                        labels: ["USA", "GER", "AUS", "UK", "RO", "BR"],
+                        datasets: [
+                            {
+                                label: "Daily Sales (€)",
+                                data: [50, 70, 30, 90, 60, 40],
+                                backgroundColor: "rgba(39, 176, 156, 0.5)",
+                                borderColor: "rgba(39, 176, 156, 1)",
+                                borderWidth: 1,
+                            },
+                        ],
+                    },
+                    chart4: {
+                        type: "line",
+                        labels: ["AUG", "SEP", "OCT", "NOV"],
+                        datasets: [
+                            {
+                                label: "Completed Tasks",
+                                data: [60, 40, 70, 120],
+                                backgroundColor: "rgba(156, 39, 176, 0.2)",
+                                borderColor: "rgba(156, 39, 176, 1)",
+                                borderWidth: 2,
+                                tension: 0.4,
+                                pointBackgroundColor: "#fff",
+                                pointBorderWidth: 1,
+                            },
+                        ],
+                    },
+                };
+
+// Crear gráficos
+// Crear gráficos con configuraciones específicas
+                function createChart(ctx, chartKey, customOptions = {}) {
+                    // Configuración predeterminada
+                    const defaultOptions = {
+                        responsive: true, // Asegura que el gráfico sea responsivo
+                        maintainAspectRatio: true, // Configuración estándar
+                        plugins: {
+                            legend: {
+                                labels: {color: "#fff"},
+                            },
+                        },
+                        scales: {
+                            x: {
+                                ticks: {color: "#fff"},
+                                grid: {display: false},
+                            },
+                            y: {
+                                ticks: {color: "#fff"},
+                                grid: {color: "rgba(255,255,255,0.1)"},
+                            },
+                        },
+                    };
+
+                    // Combinar configuraciones predeterminadas con personalizadas
+                    const chartOptions = {...defaultOptions, ...customOptions};
+
+                    // Crear el gráfico
+                    new Chart(ctx, {
+                        type: chartData[chartKey].type,
+                        data: {
+                            labels: chartData[chartKey].labels,
+                            datasets: chartData[chartKey].datasets,
+                        },
+                        options: chartOptions,
+                    });
+                }
+
+// Configuración personalizada para el gráfico 1
+                const chart1Options = {
+                    maintainAspectRatio: false, // Mantener aspecto
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: "#fff", // Color de las etiquetas
+                            },
+                            grid: {display: true}, // Ocultar líneas de la cuadrícula en el eje X
+                        },
+                        y: {
+                            ticks: {
+                                color: "#fff", // Color de las etiquetas
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.1)", // Color de las líneas de la cuadrícula
+                            },
+                        },
+                    },
+                    layout: {
+                        padding: {
+                            left: 10, // Ajuste opcional para el lado izquierdo
+                            right: 10, // Ajuste opcional para el lado derecho
+                            top: 10, // Ajuste opcional para la parte superior
+                            bottom: 20, // Separación extra entre los meses y los números
+                        },
+                    },
+                };
+
+// Configuración personalizada para el gráfico 2
+                const chart2Options = {
+                    maintainAspectRatio: true, // Altura ajustable
+                };
+
+// Crear gráficos
+                const ctx1 = document.getElementById("chart1").getContext("2d");
+                createChart(ctx1, "chart1", chart1Options); // Gráfico 1 con configuración específica
+
+                const ctx2 = document.getElementById("chart2").getContext("2d");
+                createChart(ctx2, "chart2", chart2Options); // Gráfico 2 con configuración específica
+
+                const ctx3 = document.getElementById("chart3").getContext("2d");
+                createChart(ctx3, "chart3"); // Gráfico 3 con configuración predeterminada
+
+                const ctx4 = document.getElementById("chart4").getContext("2d");
+                createChart(ctx4, "chart4"); // Gráfico 4 con configuración predeterminada
+
+            </script>
+        </h:form>
+    </h:body>
+</html>
+

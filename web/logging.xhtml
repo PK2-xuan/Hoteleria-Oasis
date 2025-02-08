@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Cargando...</title>
+        <link rel="icon" href="ico.png" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            />
+    </h:head>
+
+    <style>
+        .gradient-custom-2 {
+            /* background: #fccb90; */
+            background: -webkit-linear-gradient(
+                to right,
+                #c0b29a, #bdb38e, #b4a982
+                );
+            background: linear-gradient(to right, #c0b29a, #bdb38e, #b4a982);
+        }
+
+        @media (min-width: 768px) {
+            .gradient-form {
+                height: 100vh !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .gradient-custom-2 {
+                border-top-right-radius: 0.3rem;
+                border-bottom-right-radius: 0.3rem;
+            }
+        }
+        .error-message {
+            color: red;
+        }
+
+    </style>
+
+    <h:body>
+
+        <section class="h-100 gradient-form" style="background-color:#BCAAA4">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-xl-10">
+                        <div class="card rounded-3 text-black">
+                            <div class="row g-0">
+                                <div class="col-lg-6">
+                                    <div class="card-body p-md-5 mx-md-4">
+                                        <div class="text-center">
+                                            <img
+                                                src="logo2.png"
+                                                style="width: 185px"
+                                                alt="logo"
+                                                />
+                                            <!-- <h4>We are The Lotus Team</h4> -->
+                                        </div> 
+
+                                        <div class="b-dark" style="height: 40px; overflow: hidden;">
+                                            <h:messages id="loginMessages" styleClass="error-message mt-3 min-height-message" />
+                                        </div>
+
+                                        <h:form class="mt-4">
+                                            <p hidden="">Por favor, ingrese a su cuenta</p>
+
+                                            <div data-mdb-input-init="true" class="form-outline">
+                                                <h:outputLabel for="username" value="Username:" class="form-label" />
+                                                <h:inputText id="username" value="#{userController.usuario.username}" class="form-control" 
+                                                             onclick="hideErrorMessage()" />
+                                            </div>
+
+                                            <div data-mdb-input-init="true" class="form-outline mb-4">
+                                                <h:outputLabel for="password" value="Password:" class="form-label" />
+                                                <h:inputSecret id="password" value="#{userController.usuario.password}" class="form-control" 
+                                                               onclick="hideErrorMessage()" />
+                                            </div>
+
+
+
+                                            <div class="text-center pt-1 mb-5 pb-1">
+                                                <h:commandButton value="Log in" action="#{userController.login}" 
+                                                                 class="btn btn-outline-secondary btn-block fa-lg gradient-custom-2 mb-3" />
+                                                <a href="home.xhtml" hidden="">Retroceder</a>
+                                            </div>
+
+                                            <div class="d-flex align-items-center justify-content-center pb-1">
+                                                <p class="mb-0 me-3">¿No tienes una cuenta?</p>
+                                                <a type="button" data-mdb-button-init="true" data-mdb-ripple-init="true" 
+                                                   class="btn btn-outline-secondary" href="register.xhtml" style="margin-left: 1rem;">crear cuenta</a>
+                                            </div>
+                                        </h:form>
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center px-0">
+                                    <picture class="w-100 h-100">
+                                        <img src="img/ico/login.jpg" class="img-fluid w-auto h-100 object-fit-cover"></img>
+                                    </picture>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            window.addEventListener("load", function () {
+                document.title = "Iniciar sesion";
+            });
+        </script>
+
+        <script>
+            function hideErrorMessage() {
+                var errorMessage = document.getElementById('loginMessages');
+                if (errorMessage) {
+                    errorMessage.style.display = 'none';
+                }
+            }
+        </script>
+
+    </h:body>
+</html>
+

@@ -1,0 +1,550 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Cargando...</title>
+        <link rel="icon" href="ico.png" />
+        <!-- boostrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+            />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- font google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <!--   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap;" rel="stylesheet" />-->
+
+
+        <!-- ======== CSS ======== -->
+        <link rel="stylesheet" href="css/AdmAlonestyle.css" />
+
+        <!-- ===== Boxicons CSS ===== -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+            rel="stylesheet"
+            />
+
+        <!-- Fontawesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            />
+
+        <script
+            type="text/javascript"
+            src="http://code.jquery.com/jquery.js"
+        ></script>
+    </h:head>
+
+    <style>
+        .upload-container {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            width: 350px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #fff;
+        }
+
+        .upload-container:hover {
+            border-color: #666;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #bbb;
+        }
+
+        .upload-text {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .upload-browse {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .upload-browse:hover {
+            text-decoration: underline;
+        }
+
+        .file-upload-image {
+            max-width: 350px;
+            max-height: 300px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+        }
+        .image-title-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 12vh;
+        }
+
+        .remove-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+    <h:body>
+        <h:form enctype="multipart/form-data"   >
+
+            <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="logo2.png" alt="" />
+
+                        </span>
+
+                        <div class="text logo-text">
+                            <span class="name">Oasis</span>
+                            <span class="profession">Administrador</span>
+                        </div>
+                    </div>
+
+                    <i class="bx bx-chevron-right toggle" style="margin-top: 4rem"></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+                        <!-- <li class="search-box">
+                                  <i class='bx bx-search icon'></i>
+                                  <input type="text" placeholder="Buscar...">
+                              </li> -->
+
+                        <ul class="menu-links list-unstyled">
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/admin_oasis.xhtml">
+                                    <i class="bx bx-home-alt icon"></i>
+                                    <span class="text nav-text">Inicio</span>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-link">
+                              <a href="#" data-page="Usuario.html">
+                                <i class="bx bxs-user icon"></i>
+                                <span class="text nav-text">Usuarios</span>
+                              </a>
+                            </li> -->
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/usuario_admi.xhtml">
+                                    <i class="bx bxs-user icon"></i>
+                                    <span class="text nav-text">Usuarios</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="api.xhtml">
+                                    <i class='bx bxl-spring-boot icon'></i>
+                                    <span class="text nav-text">API Roles</span>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/reservas_admi.xhtml">
+                                    <i class="fa-regular fa-calendar-days icon"></i>
+                                    <span class="text nav-text">Reservaciones</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/habitaciones_admi.xhtml">
+                                    <i class="fa-solid fa-bed icon"></i>
+                                    <span class="text nav-text">Habitaciones</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/categoria_admi.xhtml">
+                                    <i class="fa-solid fa-list icon"></i>
+                                    <span class="text nav-text">Categoria</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/comentario_admi.xhtml">
+                                    <i class="fa-solid fa-comment icon"></i>
+                                    <span class="text nav-text">Comentarios</span>
+                                </a>
+                            </li>
+
+                            <li class="search-box">
+                                <!-- <i class='bx bx-search icon'></i>
+                                          <input type="text" placeholder="Buscar..."> -->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bottom-content">
+                        <ul class="list-unstyled">
+                            <li class="">
+                                <a href="#">
+                                    <i class="bx bx-log-out icon"></i>
+                                    <h:commandButton value="Cerrar Sesión" class="text nav-text btn" action="#{userController.logout}" />
+                                </a>
+                            </li>
+
+                            <li class="mode">
+                                <div class="sun-moon">
+                                    <i class="bx bx-moon icon moon"></i>
+                                    <i class="bx bx-sun icon sun"></i>
+                                </div>
+                                <span class="mode-text text">Dark mode</span>
+
+                                <div class="toggle-switch">
+                                    <span class="switch"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+            <section class="home">
+                <nav class="navbar">
+                    <div class="container-md d-flex justify-content-end align-items-center px-4">
+                        <h:graphicImage value="image/#{usuarioBean.usuario.path}"  width="38"
+                                        height="38"
+                                        class="d-inline-block align-text-top rounded-circle mr-3"/>
+
+                        <div class="color-text-navbar">
+                            <p class="mb-0 fw-bold" style="height: 20px">#{usuarioBean.usuario.nombre} &nbsp; #{usuarioBean.usuario.apellido}</p>
+                            <span class="fw-light" >Admin</span>
+                        </div>
+
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a
+                                class="nav-link"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                >
+                                <i class="fa-solid fa-gear fa-lg" id="gear-icon"></i>
+                            </a>
+                            <!-- Dropdown -->
+                            <ul
+                                class="dropdown-menu dropdown-menu-end mt-3"
+                                aria-labelledby="gear-icon"
+                                >
+                                <li><a class="dropdown-item" href="#">Tu perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            </ul>
+                        </li>
+
+                    </div>
+                </nav>
+
+
+                <div class="text" style="height: 86.8vh; overflow-y: auto">
+                    <!-- Contenido -->
+
+
+                    <div class="container design-border-user-xuan pt-4 pb-5">
+
+                        <div class="row">
+
+                            <div class="col-md-7 pt-3">
+                                <!-- Contenido izquierda -->
+                                <div class="container mx-5 px-5">
+                                    <h1 class="mb-4">Actualizar Habitacion</h1>
+
+                                    <!-- Basic Information -->
+                                    <div class="form-row pb-5">
+                                        <div class="form-group col-md-10">
+                                            <h4>Información básica</h4>
+                                            <p>
+                                                Sección para configurar la información básica de la
+                                                Habitacion
+                                            </p>
+                                            <label for="productName"> Código </label>
+                                            <h:inputText id="codigo" value="#{roomController.habitacion.id_habitacion}" class="form-control" />
+
+                                            <label for="code" class="mt-3">Cantidad disponible</label>
+                                            <h:selectOneMenu id="cantidad" value="#{roomController.habitacion.cantidad}" class="form-select">
+                                                <f:selectItem itemLabel="Seleccionar..." itemValue="" noSelectionOption="true" />
+                                                <f:selectItem itemLabel="1" itemValue="1" />
+                                                <f:selectItem itemLabel="2" itemValue="2" />
+                                                <f:selectItem itemLabel="4" itemValue="4" />
+                                            </h:selectOneMenu> 
+                                            <label for="capacidad" class="mt-3">Capacidad</label>
+                                            <h:selectOneMenu id="capacidad" value="#{roomController.habitacion.capacidad}" class="form-select">
+                                                <f:selectItem itemLabel="Seleccionar..." itemValue="" noSelectionOption="true" />
+                                                <f:selectItem itemLabel="1" itemValue="1" />
+                                                <f:selectItem itemLabel="2" itemValue="2" />
+                                                <f:selectItem itemLabel="4" itemValue="4" />
+                                            </h:selectOneMenu>
+
+                                            <label for="sku" class="mt-3">Sku</label>
+                                            <h:inputText id="sku" value="#{roomController.habitacion.numero_habitacion}" class="form-control" />
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Pricing -->
+                                    <h4>Precios</h4>
+                                    <p>Sección para configurar los precios de la Habitacion</p>
+                                    <div class="row pb-5">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="precio">Precio</label>
+                                                <h:inputText id="precio" value="#{roomController.habitacion.precio}" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="taxRate">Tasa de impuesto(%)</label>
+                                                <input type="text" class="form-control" id="taxRate" value="10%" readonly="" />
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-10">
+                                            <div class="form-group">
+                                                <label for="servicios" class="mt-3">Servicios</label>
+                                                <h:inputTextarea id="servicios" value="#{roomController.habitacion.servicios}" class="form-control" style="height: 25vh; resize: none;" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Organizations -->
+                                    <h4>Organizaciones</h4>
+                                    <p>Sección para configurar el atributo del producto.</p>
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="category">Categoria</label>
+                                                <h:selectOneMenu id="category" value="#{roomController.habitacion.categoria.id_categoria}" class="form-select">
+                                                    <f:selectItem itemLabel="Seleccionar categoría" itemValue="#{null}" noSelectionOption="true" />
+                                                    <f:selectItems value="#{catController.ltsCategorias}" var="categoria" itemLabel="#{categoria.nombre_categoria}" itemValue="#{categoria.id_categoria}" />
+                                                </h:selectOneMenu>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="piso">Piso</label>
+                                                <h:selectOneMenu id="piso" value="#{roomController.habitacion.piso}" class="form-select">
+                                                    <f:selectItem itemLabel="Seleccionar..." itemValue="" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Piso 1" itemValue="1" />
+                                                    <f:selectItem itemLabel="Piso 2" itemValue="2" />
+                                                    <f:selectItem itemLabel="Piso 3" itemValue="3" />
+                                                    <f:selectItem itemLabel="Piso 4" itemValue="4" />
+                                                    <f:selectItem itemLabel="Piso 5" itemValue="5" />
+                                                    <f:selectItem itemLabel="Piso 6" itemValue="6" />
+                                                </h:selectOneMenu>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="espacio">Espacio</label>
+                                                <h:selectOneMenu id="espacio" value="#{roomController.habitacion.espacio}" class="form-select">
+                                                    <f:selectItem itemLabel="Seleccionar..." itemValue="" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="30 m2" itemValue="30" />
+                                                    <f:selectItem itemLabel="40 m2" itemValue="40" />
+                                                    <f:selectItem itemLabel="54 m2" itemValue="54" />
+                                                </h:selectOneMenu>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="cama">Cama</label>
+                                                <h:selectOneMenu id="cama" value="#{roomController.habitacion.cama}" class="form-select">
+                                                    <f:selectItem itemLabel="Seleccionar..." itemValue="" noSelectionOption="true" />
+                                                    <f:selectItem itemLabel="Queen" itemValue="Queen" />
+                                                    <f:selectItem itemLabel="King" itemValue="King" />
+                                                    <f:selectItem itemLabel="Individual" itemValue="Individual" />
+                                                    <f:selectItem itemLabel="Matrimonial" itemValue="Matrimonial" />
+                                                    <f:selectItem itemLabel="Doble" itemValue="Doble" />
+                                                </h:selectOneMenu>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-5 pt-3">
+                                <div class="form-group">
+                                    <h4>Imagen de la Habitacion</h4>
+                                    <p>Agregar o cambiar imagen de la habitacion.</p>
+
+                                    <div class="upload-container" id="upload-container">
+                                        <div class="upload-icon">
+                                            <i class="fa-solid fa-images"></i>
+                                        </div>
+                                        <div class="upload-text">
+                                            <h:inputFile id="upload-browse" value="#{roomController.file}" required="true" class="upload-browse"/>
+                                        </div>
+                                    </div>
+
+                                    <!--      <div class="upload-container" id="upload-container">
+                                         <div class="upload-icon">
+                                         
+                                             <i class="fa-solid fa-images"></i>
+                                         </div>
+                                         <div class="upload-text">
+                                             Click para agrear la 
+                                             <span class="upload-browse" id="upload-browse">imagen</span>
+                                         </div>
+                                         <input
+                                             type="file"
+                                             id="file-input"
+                                             accept="image/jpeg, image/png"
+                                             style="display: none"
+                                             />
+                                     </div>
+ 
+                                     <div
+                                         class="file-upload-content upload-container"
+                                         style="display: none"
+                                         >
+                                         <img
+                                             class="file-upload-image"
+                                             src="#"
+                                             alt="Imagen del Producto"
+                                             />
+                                         <div class="image-title-wrap">
+                                             <button
+                                                 type="button"
+                                                 onclick="removeUpload()"
+                                                 class="remove-image"
+                                                 >
+                                                 Eliminar <span class="image-title">Imagen cargada</span>
+                                             </button>
+                                         </div>
+                                     </div>
+                                    -->
+
+                                    <div class="fixed-bottom text-end mb-5 pb-4 col-md-10">
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-secondary me-2">Cancelar</button>
+
+                                            <h:commandButton value="Actualizar" action="#{roomController.actualizar()}" class="btn btn-primary"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <footer class="text-center py-2 footer-desing-xuan">
+                    <div class="container">
+                        <p class="mb-0">
+                            Copyright © 2024 Cesar. Diseñado con
+                            <i class="fa-regular fa-heart" style="color: #ff1a1a"></i> para el curso Diseño web Integrado, subido en Github.
+                        </p>
+                    </div>
+                </footer>
+            </section>
+
+
+
+            <script>
+                const uploadContainer = document.getElementById("upload-container");
+                const fileInput = document.getElementById("file-input");
+                const fileUploadContent = document.querySelector(".file-upload-content");
+                const fileUploadImage = document.querySelector(".file-upload-image");
+                const removeImageButton = document.querySelector(".remove-image");
+
+                uploadContainer.addEventListener("click", () => {
+                    fileInput.click();
+                });
+
+                fileInput.addEventListener("change", (e) => {
+                    const files = e.target.files;
+                    handleFiles(files);
+                });
+
+                function handleFiles(files) {
+                    if (files.length > 0) {
+                        const file = files[0];
+                        if (file.type.startsWith("image/")) {
+                            const reader = new FileReader();
+                            reader.onload = (event) => {
+                                const imageData = event.target.result;
+                                fileUploadImage.src = imageData;
+                                fileUploadContent.style.display = "block";
+                                uploadContainer.style.display = "none";
+                            };
+                            reader.readAsDataURL(file);
+                        } else {
+                            alert("Please upload a valid image file (jpeg or png).");
+                        }
+                    }
+                }
+
+                removeImageButton.addEventListener("click", () => {
+                    fileUploadContent.style.display = "none";
+                    uploadContainer.style.display = "flex";
+                    fileInput.value = "";
+                });
+            </script>
+            <script>
+                const body = document.querySelector("body"),
+                        sidebar = body.querySelector("nav"),
+                        toggle = body.querySelector(".toggle"),
+                        searchBtn = body.querySelector(".search-box"),
+                        modeSwitch = body.querySelector(".toggle-switch"),
+                        modeText = body.querySelector(".mode-text");
+
+                toggle.addEventListener("click", () => {
+                    sidebar.classList.toggle("close");
+                });
+
+                searchBtn.addEventListener("click", () => {
+                    sidebar.classList.remove("close");
+                });
+
+                modeSwitch.addEventListener("click", () => {
+                    body.classList.toggle("dark");
+
+                    if (body.classList.contains("dark")) {
+                        modeText.innerText = "Light mode";
+                    } else {
+                        modeText.innerText = "Dark mode";
+                    }
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    setTimeout(function () {
+                        document.title = "Administrador | Inicio";
+                    }, 350); // Cambia el título después de 2 segundos (2000 milisegundos)
+                });
+            </script>
+        </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Listar Usuarios</title>
+    </h:head>
+    <h:body>
+        <h1>Listar Usuarios</h1>
+
+        <h:form>
+            <h:dataTable value="#{userController.ltsUsuarios}" var="usuario">
+
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{usuario.id_usuario}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">ID-rol</f:facet>
+                        #{usuario.rol.id_rol}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Imagen</f:facet>
+                    <h:graphicImage value="#{usuario.ico}" width="50" height="50" />
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Nombre</f:facet>
+                        #{usuario.nombre}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Apellido</f:facet>
+                        #{usuario.apellido}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Sexo</f:facet>
+                        #{usuario.sexo}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">DNI</f:facet>
+                        #{usuario.dni}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{usuario.email}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Estado</f:facet>
+                        #{usuario.estado}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Teléfono</f:facet>
+                        #{usuario.telefono}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Username</f:facet>
+                        #{usuario.username}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Password</f:facet>
+                        #{usuario.password}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">Acciones</f:facet>
+                    <h:commandLink value="update" action="UpdateUser" actionListener="#{userController.leer(usuario.id_usuario)}" />
+
+                    <h:commandLink value="delete" action="#{userController.eliminar(usuario)}"/> 
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>

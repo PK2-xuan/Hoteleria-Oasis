@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cargando...</title>
+        <link rel="icon" href="ico.png" />
+
+        <!-- Google Font -->
+        <!--     <link
+                 href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
+                 rel="stylesheet"
+                 />
+             <link
+                 href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap"
+                 rel="stylesheet"
+                 />
+        -->
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <!-- Offcanvas Menu Section Begin -->
+        <div class="offcanvas-menu-overlay"></div>
+        <div class="canvas-open">
+            <i class="icon_menu"></i>
+        </div>
+        <div class="offcanvas-menu-wrapper">
+            <div class="canvas-close">
+                <i class="icon_close"></i>
+            </div>
+            <div class="header-configure-area">
+                <div class="language-option">
+                    <img src="img/ico/ico_oasis.png" alt="" />
+                </div>
+            </div>
+            <nav class="mainmenu mobile-menu">
+                <ul>
+                    <li><a href="./home.xhtml">Inicio</a></li>
+                    <li class="active"><a href="./rooms.xhtml">Habitaciones</a></li>
+                    <li><a href="./about-us.xhtml">Sobre nosotros</a></li>
+                    <li><a href="./contact.xhtml">Contactanos</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+            <div class="top-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+            <ul class="top-widget">
+                <li><i class="fa fa-phone"></i>(01) 3192929</li>
+                <li><i class="fa fa-envelope"></i>Lotus@corporation.net</li>
+            </ul>
+        </div>
+        <!-- Offcanvas Menu Section End -->
+
+        <!-- Header Section Begin -->
+        <header class="header-section">
+            <div class="menu-item">
+                <div class="container">
+
+
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="logo">
+                                <a href="./home.html">
+                                    <img src="logo.png" alt="LOTUS" width="85%" style="margin-top: -0.7rem"></img>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="nav-menu">
+                                <nav class="mainmenu">
+                                    <ul>
+                                        <li><a href="./home.xhtml">Inicio</a></li>
+                                        <li class="active"><a href="./rooms.xhtml">Habitaciones</a></li>
+                                        <li><a href="./about-us.xhtml">Sobre nosotros</a></li>
+                                        <li><a href="./contact.xhtml">Contactanos</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="nav-right">
+                                    <div class="d-flex align-items-center">
+                                        <div class="name-container">
+                                            <p class="mb-0 fw-bold nombre" style="font-size: 17px; color: black">#{usuarioBean.usuario.nombre}</p>
+
+                                            <h:commandButton value="Cerrar Sesión" class="text nav-text btn" style="font-size: 15px; margin-top: -14px;color: black" action="#{userController.logout}" />
+                                        </div>
+                                        <a href="logging.xhtml" class="ml-3" >
+                                            <h:graphicImage value="image/#{usuarioBean.usuario.path}"  width="40" height="40" class="d-inline-block align-text-top rounded-circle"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Breadcrumb Section Begin -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-text">
+                            <h2>Detalle de la Habitacion</h2>
+                            <div class="bt-option">
+                                <a href="./home.xhtml">Inicio</a>
+                                <span>Habitaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Section End -->
+
+        <!-- Room Details Section Begin -->
+        <section class="room-details-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+
+                        <h:form>
+                            <div class="room-details-item">
+                                <h:graphicImage value="image/#{habitacion.img_path}" width="100%"/>
+                                <div class="rd-text">
+                                    <div class="rd-title">
+                                        <h3>#{habitacion.categoria.nombre_categoria}</h3>
+                                        <div class="rdt-right">
+                                            <div class="rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star-half_alt"></i>
+                                            </div>
+
+                                            <a>Disponible</a>
+                                        </div>
+                                    </div>
+                                    <h2>s/#{roomController.habitacion.precio}<span>/Por noche</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Espacio:</td>
+                                                <td>#{roomController.habitacion.espacio} m2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Capacidad:</td>
+                                                <td>Personas Max. #{roomController.habitacion.capacidad}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Cama:</td>
+                                                <td>#{roomController.habitacion.cama}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Servicios:</td>
+                                                <td>#{roomController.habitacion.servicios}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Disponibilidad:</td>
+                                                <td>Habitacion Disponible</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <p class="f-para">
+                                        Motorhome or Trailer that is the question for you. Here are
+                                        some of the advantages and disadvantages of both, so you will
+                                        be confident when purchasing an RV. When comparing Rvs, a
+                                        motorhome or a travel trailer, should you buy a motorhome or
+                                        fifth wheeler? The advantages and disadvantages of both are
+                                        studied so that you can make your choice wisely when
+                                        purchasing an RV. Possessing a motorhome or fifth wheel is an
+                                        achievement of a lifetime. It can be similar to sojourning
+                                        with your residence as you search the various sites of our
+                                        great land, America.
+                                    </p>
+                                    <p>
+                                        The two commonly known recreational vehicle classes are the
+                                        motorized and towable. Towable rvs are the travel trailers and
+                                        the fifth wheel. The rv travel trailer or fifth wheel has the
+                                        attraction of getting towed by a pickup or a car, thus giving
+                                        the adaptability of possessing transportation for you when you
+                                        are parked at your campsite.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </h:form>
+
+                        <h:form>
+                            <div class="rd-reviews">
+                                <h4>Comentarios</h4>
+                                <!-- Repetimos sobre la lista de comentarios -->
+                                <ui:repeat value="#{comentController.ltsComment}" var="comment">
+                                    <div class="review-item">
+                                        <div class="ri-pic">
+                                            <!-- <img src="#" alt="imagen" /> -->
+                                            <!-- <h:graphicImage value="image/aca ruta img" alt="imagen" /> -->
+                                        </div>
+                                        <div class="ri-text">
+                                            <!-- Mostramos la fecha del comentario -->
+                                            <span>#{comment.fecha_comentario}</span>
+
+                                            <div class="rating">
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star"></i>
+                                                <i class="icon_star-half_alt"></i>
+                                            </div>
+                                            <!-- Mostramos el nombre del usuario -->
+                                            <h5>#{comment.usuario.nombre} #{comment.usuario.apellido}</h5>
+                                            <!-- Mostramos el comentario -->
+                                            <p>#{comment.comentario}</p>
+                                        </div>
+                                    </div>
+                                </ui:repeat>
+                            </div>
+                        </h:form>
+
+                        <div class="review-add">
+                            <h4>Agregar Comentario</h4>
+                            <h:form class="ra-form">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h5>Calificación:</h5>
+                                        <h:selectOneMenu id="clasificacion" value="#{comentController.coment.clasificacion}" required="true">
+                                            <f:selectItem itemLabel="Seleccione" itemValue="" />
+                                            <f:selectItem itemLabel="1" itemValue="1" />
+                                            <f:selectItem itemLabel="2" itemValue="2" />
+                                            <f:selectItem itemLabel="3" itemValue="3" />
+                                            <f:selectItem itemLabel="4" itemValue="4" />
+                                            <f:selectItem itemLabel="5" itemValue="5" />
+                                        </h:selectOneMenu>
+                                    </div>
+
+                                    <div class="col-lg-12 mt-5">
+                                        <h5>Ingrese tu comentario:</h5>
+                                        <h:inputTextarea id="comentario" value="#{comentController.coment.comentario}" required="true"/>
+
+                                        <h:commandButton id="submitBtn" value="Registrar Comentario" action="#{comentController.registrar}" 
+                                                         style="background:#dfa974; color: white; max-width: 250px" class="text-center"/>
+                                    </div>
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="room-booking">
+                            <h3>Tu reservacion</h3>
+                            <h:form>
+                                <div class="check-date">
+                                    <label for="date-in">Entrada:</label>
+                                    <h:inputText class="date-input" id="date-in" value="#{bookingController.reservaciones.fecha_inicio}" />
+                                    <i class="icon_calendar"></i>
+                                </div>
+                                <div class="check-date">
+                                    <label for="date-out">Salida:</label>
+                                    <h:inputText class="date-input" id="date-out" value="#{bookingController.reservaciones.fecha_fin}" />
+                                    <i class="icon_calendar"></i>
+                                </div>
+                                <div class="select-option">
+                                    <label for="room">Habitacion:</label>
+                                    <h:selectOneMenu id="habitacion" value="#{bookingController.reservaciones.habitacion.id_habitacion}" required="true">
+                                        <f:selectItem itemLabel="Seleccione habitación" itemValue="#{null}" noSelectionOption="true" />
+                                        <f:selectItems value="#{roomController.ltsRooms}" var="habitacion" itemLabel="#{habitacion.numero_habitacion}" itemValue="#{habitacion.id_habitacion}" />
+                                    </h:selectOneMenu>
+                                </div>
+
+                                <!-- Botón con acción de registrar y alerta personalizada -->
+                                <div class="check-date">
+                                    <h:commandButton value="Registrar" action="#{bookingController.registrar}"/>
+                                </div>
+
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Room Details Section End -->
+
+        <!-- Footer Section Begin -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-text">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="ft-about">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br />
+                                    Omnis aspernatur facere quibusdam autem.
+                                </p>
+                                <div class="fa-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-contact">
+                                <h6>Sobre Nosotros</h6>
+                                <ul>
+                                    <li>(01) 3192929</li>
+                                    <li>Lotus@corporation.net</li>
+                                    <li>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-newslatter">
+                                <h6>NUEVA NOTICIAS</h6>
+                                <p>Obtenga las últimas actualizaciones y ofertas.</p>
+                                <form action="#" class="fn-form">
+                                    <input type="text" placeholder="Correo Electronico" />
+                                    <button type="submit"><i class="fa fa-send"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+
+        <!-- Search model Begin -->
+        <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search here....." />
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.slicknav.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(function () {
+                    document.title = "Oasis | Detalle de la Habitacion";
+                }, 350);
+            });
+        </script>
+
+
+    </h:body>
+</html>
+

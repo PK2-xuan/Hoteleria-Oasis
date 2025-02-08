@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Página Index</title>
+    </h:head>
+
+    <h:body>
+        <!--     <h1>Bienvenido a la Página Index</h1>
+        <h:form>
+                <p>Roles</p>
+                <h:commandButton value="Lista de roles " action="ReadRol" /> <br></br> 
+                <p>Usuarios:</p>
+                <h:commandButton value="Lista de usuarios" action="ReadUser" /> <br></br> 
+                <h:commandButton value="Crear usuario" action="CreateUser" /> <br></br> 
+                <p>Categorias</p>
+                <h:commandButton value="Crear categoria" action="CreateCat" /> <br></br>
+                <h:commandButton value="Lista de categorias" action="ReadCategory" /> <br></br> 
+                <p>Habitaciones</p>
+                <h:commandButton value="Lista de habitaciones" action="ReadRoom" /> <br></br> 
+                <h:commandButton value="Crear habitacion" action="CreateRoom" /> <br></br> 
+                <p>Comentario</p>
+                <h:commandButton value="Comentario" action="CreateComment" /> <br></br> 
+                <h:commandButton value="Lista de Comentario" action="ReadComment" /> <br></br> 
+                <p>Reservas</p>
+                <h:commandButton value="Reservas" action="CreateReserva" /> <br></br> 
+                <h:commandButton value="Lista de Reservas" action="ReadBooking" /> <br></br> 
+            </h:form>
+        -->
+
+        <h1>Subir Imagen</h1>
+        <h:form enctype="multipart/form-data">
+            <h:panelGrid columns="2">
+                <h:outputLabel for="file" value="Seleccionar Imagen:" />
+                <h:inputFile id="file" value="#{imageController.file}" required="true" />
+
+                <h:commandButton value="Subir Imagen" action="#{imageController.upload}" />
+            </h:panelGrid>
+            <h:messages />
+        </h:form>
+
+        <h:commandLink value="Listar Imágenes" action="listImages.xhtml" />
+
+
+        <h1>Lista de Imágenes</h1>
+        <h:dataTable value="#{imageController.images}" var="image" border="1">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                    #{image.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Imagen</f:facet>
+                <h:graphicImage value="image/#{image.path}" width="100" height="100" />
+            </h:column>
+        </h:dataTable>
+
+        <h:commandLink value="Subir Nueva Imagen" action="uploadImage.xhtml" />
+    </h:body>
+</html>

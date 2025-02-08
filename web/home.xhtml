@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Cargando...</title>
+        <link rel="icon" href="ico.png" />
+        <!-- Google Font -->
+        <!--     <link
+                 href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
+                 rel="stylesheet"
+                 />
+             <link
+                 href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap"
+                 rel="stylesheet"
+                 />
+        -->
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </h:head>
+
+    <style>
+        .transparent-content {
+            opacity: 0; /* Hace que todo el contenido sea invisible pero ocupa espacio */
+            pointer-events: none; /* Opcional: impide la interacción con los elementos */
+        }
+    </style>
+
+    <h:body>
+
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <!-- Offcanvas Menu Section Begin -->
+        <div class="offcanvas-menu-overlay"></div>
+        <div class="canvas-open">
+            <i class="icon_menu"></i>
+        </div>
+        <div class="offcanvas-menu-wrapper">
+            <div class="canvas-close">
+                <i class="icon_close"></i>
+            </div>
+            <div class="header-configure-area">
+                <div class="language-option">
+                    <img src="img/ico/ico_oasis.png" alt="" />
+                </div>
+            </div>
+            <nav class="mainmenu mobile-menu">
+                <ul>
+                    <li class="active"><a href="./home.xhtml">Inicio</a></li>
+                    <li><a href="./rooms.xhtml">Habitaciones</a></li>
+                    <li><a href="./about-us.xhtml">Sobre nosotros</a></li>
+                    <li><a href="./contact.xhtml">Contactanos</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+            <div class="top-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+            <ul class="top-widget">
+                <li><i class="fa fa-phone"></i>(01) 3192929</li>
+                <li><i class="fa fa-envelope"></i>Lotus@corporation.net</li>
+            </ul>
+        </div>
+        <!-- Offcanvas Menu Section End -->
+
+        <!-- Header Section Begin -->
+        <header class="header-section">
+            <div class="menu-item">
+                <div class="container">
+                    <h:form enctype="multipart/form-data" >
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <div class="logo">
+                                    <a href="./home.xhtml">
+                                        <img src="logo.png" alt="LOTUS" width="85%" style="margin-top: -0.7rem"></img>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="nav-menu">
+                                    <nav class="mainmenu">
+                                        <ul>
+                                            <li class="active"><a href="./home.xhtml">Inicio</a></li>
+                                            <li><a href="./rooms.xhtml">Habitaciones</a></li>
+                                            <li><a href="./about-us.xhtml">Sobre nosotros</a></li>
+                                            <li><a href="./contact.xhtml">Contactanos</a></li>
+                                        </ul>
+                                    </nav>
+
+                                    <div class="nav-right">
+                                        <div class="d-flex align-items-center">
+                                            <div class="name-container">
+                                                <p class="mb-0 fw-bold nombre" style="font-size: 17px; color: black">#{usuarioBean.usuario.nombre}</p>
+                                                <h:commandButton value="Cerrar Sesión" class="text nav-text btn" style="font-size: 15px; margin-top: -14px;color: black" action="#{userController.logout}" />
+                                            </div>
+                                            <a href="logging.xhtml" class="ml-3" >
+                                                <h:graphicImage value="image/#{usuarioBean.usuario.path}"  width="40" height="40" class="d-inline-block align-text-top rounded-circle"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Hero Section Begin -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero-text">
+                            <h1>Lotus</h1>
+                            <p>
+                                Aquí están los mejores sitios para reservar hoteles, incluyendo
+                                recomendaciones para viajes internacionales y para encontrar
+                                habitaciones de hotel a precios económicos.
+                            </p>
+                            <a href="#" class="primary-btn">Descúbrelo ahora</a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1 transparent-content">
+                        <div class="booking-form">
+                            <h3 class="text-center transparent">Verifica tus habitaciones</h3>
+                            <form action="#">
+                                <div class="check-date">
+                                    <label for="date-in">Entrada:</label>
+                                    <input type="text" class="date-input" id="date-in" />
+                                    <i class="icon_calendar"></i>
+                                </div>
+                                <div class="check-date">
+                                    <label for="date-out">Salida:</label>
+                                    <input type="text" class="date-input" id="date-out" />
+                                    <i class="icon_calendar"></i>
+                                </div>
+                                <div class="select-option">
+                                    <label for="guest">Personas:</label>
+                                    <select id="guest">
+                                        <option value="">1 Persona</option>
+                                        <option value="">2 Persona</option>
+                                        <option value="">3 Persona</option>
+                                    </select>
+                                </div>
+                                <button type="submit">Verificar</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="hero-slider owl-carousel">
+                <div class="hs-item set-bg" data-setbg="img/hero/hero-1.jpg"></div>
+                <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg"></div>
+                <div class="hs-item set-bg" data-setbg="img/hero/hero-3.jpg"></div>
+            </div>
+        </section>
+        <!-- Hero Section End -->
+
+        <!-- About Us Section Begin -->
+        <section class="aboutus-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-text">
+                            <div class="section-title">
+                                <span>Sobre Nosotros</span>
+                                <h2>Hotel Lotus</h2>
+                            </div>
+                            <p class="f-para">
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                Consectetur dolores commodi fuga rem blanditiis temporibus odit
+                                nobis nostrum accusamus, pariatur, accusantium nemo harum dicta
+                                magni dolore rerum, non numquam odio!
+                            </p>
+                            <p class="s-para">
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto
+                                soluta odit, harum in sequi voluptatum.
+                            </p>
+                            <a href="#" class="primary-btn about-btn">Leer Más</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-pic">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <img src="./img/home/img_naux.jpg" alt="" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <img src="./img/home/img2_naux.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Us Section End -->
+
+        <!-- Home Room Section Begin -->
+        <section class="hp-room-section">
+            <div class="container-fluid">
+                <div class="hp-room-items">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div
+                                class="hp-room-item set-bg"
+                                data-setbg="img/room/room-b1.jpg"
+                                >
+                                <div class="hr-text">
+                                    <h3>Habitación Simple</h3>
+                                    <h2>s/40.00<span>/Por Noche</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Espacio:</td>
+                                                <td>30 m2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Capacidad:</td>
+                                                <td>Personas Max. 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Cama:</td>
+                                                <td>Cama King</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Servicios:</td>
+                                                <td>WiFi, Television, Baño,...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="#" class="primary-btn">Mas Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div
+                                class="hp-room-item set-bg"
+                                data-setbg="img/room/room-b2.jpg"
+                                >
+                                <div class="hr-text">
+                                    <h3>Habitación Suite</h3>
+                                    <h2>s/90.00<span>/Por Noche</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Espacio:</td>
+                                                <td>30 m2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Capacidad:</td>
+                                                <td>Personas Max. 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Cama:</td>
+                                                <td>Cama King</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Servicios:</td>
+                                                <td>WiFi, Television, Baño,...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="#" class="primary-btn">Mas Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div
+                                class="hp-room-item set-bg"
+                                data-setbg="img/room/room-b3.jpg"
+                                >
+                                <div class="hr-text">
+                                    <h3>Habitación Deluxe</h3>
+                                    <h2>s/110.00<span>/Por Noche</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Espacio:</td>
+                                                <td>30 m2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Capacidad:</td>
+                                                <td>Personas Max. 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Cama:</td>
+                                                <td>Cama King</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Servicios:</td>
+                                                <td>WiFi, Television, Baño,...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="#" class="primary-btn">Mas Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div
+                                class="hp-room-item set-bg"
+                                data-setbg="img/room/room-b4.jpg"
+                                >
+                                <div class="hr-text">
+                                    <h3>Habitación Familiar</h3>
+                                    <h2>s/140.00<span>/Por Noche</span></h2>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td class="r-o">Espacio:</td>
+                                                <td>30 m2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Capacidad:</td>
+                                                <td>Personas Max. 2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Cama:</td>
+                                                <td>Cama King</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="r-o">Servicios:</td>
+                                                <td>WiFi, Television, Baño,...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <a href="#" class="primary-btn">Mas Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Home Room Section End -->
+
+        <!-- Testimonial Section Begin -->
+        <section class="testimonial-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <span>Comentarios</span>
+                            <h2>¿Qué dicen nuestros clientes?</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <h:form>
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2">
+                            <div class="testimonial-slider owl-carousel">
+                                <ui:repeat value="#{comentController.ltsComment}" var="comment">
+                                    <div class="ts-item">
+                                        <p>#{comment.comentario}</p>
+                                        <div class="ti-author">
+                                            <h:panelGroup rendered="#{comment.clasificacion == 1}">
+                                                <div class="rating">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{comment.clasificacion == 2}">
+                                                <div class="rating">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{comment.clasificacion == 3}">
+                                                <div class="rating">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{comment.clasificacion == 4}">
+                                                <div class="rating">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star-o text-warning"></i>
+                                                </div>
+                                            </h:panelGroup>
+                                            <h:panelGroup rendered="#{comment.clasificacion == 5}">
+                                                <div class="rating">
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                    <i class="fa fa-star text-warning"></i>
+                                                </div>
+                                            </h:panelGroup>
+                                            <h5>- #{comment.usuario.nombre} #{comment.usuario.apellido}</h5>
+                                        </div>
+                                    </div>
+                                </ui:repeat>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </h:form>
+
+            </div>
+        </section>
+        <!-- Testimonial Section End -->
+
+        <!-- Blog Section Begin -->
+        <section class="blog-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <span>NOTICIAS DEL HOTEL</span>
+                            <h2>Nuestro blog y evento</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="blog-item set-bg" data-setbg="img/blog/mancora.jpg">
+                            <div class="bi-text">
+                                <span class="b-tag">Viaje</span>
+                                <h4><a href="#">Visita Islas Ballestas</a></h4>
+                                <div class="b-time">
+                                    <i class="icon_clock_alt"></i> 15 Junio, 2024
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div
+                            class="blog-item set-bg"
+                            data-setbg="img/blog/cerro_colores.jpg"
+                            >
+                            <div class="bi-text">
+                                <span class="b-tag">Viaje</span>
+                                <h4><a href="#">Visita Mancora</a></h4>
+                                <div class="b-time">
+                                    <i class="icon_clock_alt"></i> 15 Junio, 2024
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div
+                            class="blog-item set-bg"
+                            data-setbg="img/blog/Machu_Picchu.jpg"
+                            >
+                            <div class="bi-text">
+                                <span class="b-tag">Viaje</span>
+                                <h4><a href="#">Machu Picchu</a></h4>
+                                <div class="b-time">
+                                    <i class="icon_clock_alt"></i> 20 Junio, 2024
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div
+                            class="blog-item small-size set-bg"
+                            data-setbg="img/blog/teatro_nacional.jpg"
+                            >
+                            <div class="bi-text">
+                                <span class="b-tag">Evento</span>
+                                <h4>
+                                    <a href="#"
+                                       >Conoce Ayacucho</a
+                                    >
+                                </h4>
+                                <div class="b-time">
+                                    <i class="icon_clock_alt"></i> 20 Junio, 2024
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div
+                            class="blog-item small-size set-bg"
+                            data-setbg="img/blog/ocucaje.jpg"
+                            >
+                            <div class="bi-text">
+                                <span class="b-tag">Evento</span>
+                                <h4><a href="#">Cata de Vino en Ica</a></h4>
+                                <div class="b-time">
+                                    <i class="icon_clock_alt"></i> 24 Junio, 2024
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Blog Section End -->
+
+        <!-- Footer Section Begin -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-text">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="ft-about">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br />
+                                    Omnis aspernatur facere quibusdam autem.
+                                </p>
+                                <div class="fa-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-contact">
+                                <h6>Sobre Nosotros</h6>
+                                <ul>
+                                    <li>(01) 3192929</li>
+                                    <li>Lotus@corporation.net</li>
+                                    <li>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-newslatter">
+                                <h6>NUEVA NOTICIAS</h6>
+                                <p>Obtenga las últimas actualizaciones y ofertas.</p>
+                                <form action="#" class="fn-form">
+                                    <input type="text" placeholder="Correo Electronico" />
+                                    <button type="submit"><i class="fa fa-send"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+
+        <!-- Search model Begin -->
+        <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search here....." />
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.slicknav.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(function () {
+                    document.title = "Oasis | Home";
+                }, 350);
+            });
+        </script>
+
+    </h:body>
+</html>
+

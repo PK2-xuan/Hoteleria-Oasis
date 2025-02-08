@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Agregar Categoría</title>
+    </h:head>
+    <h:body>
+        <h1>Agregar Categoría</h1>
+        <h:form enctype="multipart/form-data">
+            <h:panelGrid columns="2">
+                <h:outputLabel for="nombre" value="Nombre:"/>
+                <h:inputText id="nombre" value="#{catController.cat.nombre_categoria}" required="true"/>
+
+                <h:outputLabel for="estado" value="Estado:"/>
+                <h:inputText id="estado" value="#{catController.cat.estado}" required="true"/>
+
+                <h:outputLabel for="descripcion" value="Descripción:"/>
+                <h:inputTextarea id="descripcion" value="#{catController.cat.descripcion}" required="true"/>
+
+                <h:outputLabel for="imagen" value="Imagen:"/>
+                <h:inputFile id="imagen" value="#{catController.file}"/>
+            </h:panelGrid>
+            <h:commandButton value="Registrar" action="#{catController.registrar}"/>
+        </h:form>
+    </h:body>
+</html>

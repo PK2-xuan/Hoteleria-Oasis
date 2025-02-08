@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Cargando...</title>
+        <link rel="icon" href="ico.png" />
+
+        <!-- Google Font -->
+        <!--     <link
+                 href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap"
+                 rel="stylesheet"
+                 />
+             <link
+                 href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap"
+                 rel="stylesheet"
+                 />
+        -->
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/elegant-icons.css" type="text/css" />
+        <link rel="stylesheet" href="css/flaticon.css" type="text/css" />
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css" />
+        <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+    </h:head>
+    <h:body>
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+
+        <!-- Offcanvas Menu Section Begin -->
+        <div class="offcanvas-menu-overlay"></div>
+        <div class="canvas-open">
+            <i class="icon_menu"></i>
+        </div>
+
+
+
+
+
+        <div class="offcanvas-menu-wrapper">
+            <div class="canvas-close">
+                <i class="icon_close"></i>
+            </div>
+            <div class="header-configure-area">
+                <div class="language-option">
+                    <img src="img/ico/ico_oasis.png" alt="" />
+                </div>
+            </div>
+            <nav class="mainmenu mobile-menu">
+                <ul>
+                    <li><a href="./home.xhtml">Inicio</a></li>
+                    <li><a href="./rooms.xhtml">Habitaciones</a></li>
+                    <li class="active"><a href="./about-us.xhtml">Sobre nosotros</a></li>
+                    <li><a href="./contact.xhtml">Contactanos</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+            <div class="top-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+            <ul class="top-widget">
+                <li><i class="fa fa-phone"></i>(01) 3192929</li>
+                <li><i class="fa fa-envelope"></i>Lotus@corporation.net</li>
+            </ul>
+        </div>
+
+
+
+        <!-- Offcanvas Menu Section End -->
+
+        <!-- Header Section Begin -->
+        <header class="header-section">
+            <div class="menu-item">
+                <div class="container">
+
+
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="logo">
+                                <a href="./home.html">
+                                    <img src="logo.png" alt="LOTUS" width="85%" style="margin-top: -0.7rem"></img>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="nav-menu">
+                                <nav class="mainmenu">
+                                    <ul>
+                                        <li><a href="./home.xhtml">Inicio</a></li>
+                                        <li><a href="./rooms.xhtml">Habitaciones</a></li>
+                                        <li class="active"><a href="./about-us.xhtml">Sobre nosotros</a></li>
+                                        <li><a href="contact.xhtml">Contactanos</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="nav-right">
+                                    <div class="d-flex align-items-center">
+                                        <div class="name-container">
+                                            <p class="mb-0 fw-bold nombre" style="font-size: 17px; color: black">#{usuarioBean.usuario.nombre}</p>
+                                            <h:commandButton value="Cerrar Sesión" class="text nav-text btn" style="font-size: 15px; margin-top: -14px;color: black" action="#{userController.logout}" />
+                                        </div>
+                                        <a href="logging.xhtml" class="ml-3" >
+                                            <h:graphicImage value="image/#{usuarioBean.usuario.path}"  width="40" height="40" class="d-inline-block align-text-top rounded-circle"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </header>
+        <!-- Header End -->
+
+        <!-- Breadcrumb Section Begin -->
+        <div class="breadcrumb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="breadcrumb-text">
+                            <h2>Sobre Nosotros</h2>
+                            <div class="bt-option">
+                                <a href="./home.xhtml">Inicio</a>
+                                <span>Sobre Nosotros</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb Section End -->
+
+        <!-- About Us Page Section Begin -->
+        <section class="aboutus-page-section spad">
+            <div class="container">
+                <div class="about-page-text">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="ap-title">
+                                <h2>Bienvenidos a Lotus.</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, repellat doloremque neque dolore ut sed voluptate ratione exercitationem expedita quas obcaecati numquam ea veritatis itaque nihil nisi quis voluptatem excepturi?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 offset-lg-1">
+                            <ul class="ap-services">
+                                <li><i class="icon_check"></i> Recepción las 24 horas.</li>
+                                <li>
+                                    <i class="icon_check"></i> Desayuno diario de cortesía.
+                                </li>
+                                <li><i class="icon_check"></i> 3 piezas de lavandería por día.</li>
+                                <li><i class="icon_check"></i> Wi-Fi gratis.</li>
+                                <li><i class="icon_check"></i> Estacionamiento.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-page-services">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div
+                                class="ap-service-item set-bg"
+                                data-setbg="img/blog/blog-2.jpg"
+                                >
+                                <div class="api-text">
+                                    <h3>Tour y Viajes</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div
+                                class="ap-service-item set-bg"
+                                data-setbg="img/blog/blog-4.jpg"
+                                >
+                                <div class="api-text">
+                                    <h3>Diseños Modernos</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div
+                                class="ap-service-item set-bg"
+                                data-setbg="img/blog/blog-6.jpg"
+                                >
+                                <div class="api-text">
+                                    <h3>Eventos</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- About Us Page Section End -->
+
+        <!-- Video Section Begin -->
+        <section class="video-section set-bg" data-setbg="img/hero/hero-1.jpg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="video-text text-black">
+                            <h2>Descubre nuestro hotel y servicios.</h2>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                            </p>
+                            <a
+                                href="Limeñito Rap [Letra] - Gabs(720P_60FPS).mp4"
+                                class="play-btn video-popup"
+                                ><img src="play.png" alt=""
+                                  /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Video Section End -->
+
+        <!-- Gallery Section Begin -->
+        <section class="gallery-section spad">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title">
+                            <span>Nuestras Habitaciones</span>
+                            <h2>Descubre nuestro trabajo</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div
+                            class="gallery-item set-bg"
+                            data-setbg="img/gallery/gallery-1.jpg"
+                            >
+                            <div class="gi-text">
+                                <h3>Habitaciones de lujo</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div
+                                    class="gallery-item set-bg"
+                                    data-setbg="img/gallery/gallery-3.jpg"
+                                    >
+                                    <div class="gi-text">
+                                        <h3>Habitaciones</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div
+                                    class="gallery-item set-bg"
+                                    data-setbg="img/gallery/gallery-4.jpg"
+                                    >
+                                    <div class="gi-text">
+                                        <h3>Modernas</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div
+                            class="gallery-item large-item set-bg"
+                            data-setbg="img/gallery/gallery-2.jpg"
+                            >
+                            <div class="gi-text">
+                                <h3>Diseños atractivos</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Gallery Section End -->
+
+        <!-- Footer Section Begin -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="footer-text">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="ft-about">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.<br />
+                                    Omnis aspernatur facere quibusdam autem.
+                                </p>
+                                <div class="fa-social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-contact">
+                                <h6>Sobre Nosotros</h6>
+                                <ul>
+                                    <li>(01) 3192929</li>
+                                    <li>Lotus@corporation.net</li>
+                                    <li>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 offset-lg-1">
+                            <div class="ft-newslatter">
+                                <h6>NUEVA NOTICIAS</h6>
+                                <p>Obtenga las últimas actualizaciones y ofertas.</p>
+                                <form action="#" class="fn-form">
+                                    <input type="text" placeholder="Correo Electronico" />
+                                    <button type="submit"><i class="fa fa-send"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+
+        <!-- Search model Begin -->
+        <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch"><i class="icon_close"></i></div>
+                <form class="search-model-form">
+                    <input type="text" id="search-input" placeholder="Search here....." />
+                </form>
+            </div>
+        </div>
+        <!-- Search model end -->
+
+        <!-- Js Plugins -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.slicknav.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(function () {
+                    document.title = "Oasis | Sobre Nosotros";
+                }, 350);
+            });
+        </script>
+    </h:body>
+</html>
+

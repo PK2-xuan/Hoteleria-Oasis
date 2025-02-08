@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listar Roles</title>
+</h:head>
+<h:body>
+    <h1>Listar Roles</h1>
+
+    <h:form>
+        <h:dataTable value="#{rolController.ltsRoles}" var="rol">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{rol.id_rol}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nombre del Rol</f:facet>
+                #{rol.nombre_rol}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Acciones</f:facet>
+                <h:commandButton value="Editar" action="#{rolController.leer(rol.id_rol)}" />
+                <h:commandButton value="Eliminar" action="#{rolController.eliminar(rol)}" />
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>

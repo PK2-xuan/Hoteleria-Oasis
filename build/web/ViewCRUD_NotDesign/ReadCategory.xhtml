@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Listar Categorías</title>
+</h:head>
+<h:body>
+    <h1>Listar Categorías</h1>
+
+    <h:form>
+        <h:dataTable value="#{catController.ltsCategorias}" var="categoria">
+            <h:column>
+                <f:facet name="header">ID</f:facet>
+                #{categoria.id_categoria}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Nombre de la Categoría</f:facet>
+                #{categoria.nombre_categoria}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Estado</f:facet>
+                #{categoria.estado}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Imagen</f:facet>
+                <h:graphicImage value="#{categoria.imagen_cat}" width="50" height="50" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Descripción</f:facet>
+                #{categoria.descripcion}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Acciones</f:facet>
+                <h:commandButton value="Editar" action="#{catController.leer(categoria.id_categoria)}" />
+                <h:commandButton value="Eliminar" action="#{catController.eliminar(categoria)}" />
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>

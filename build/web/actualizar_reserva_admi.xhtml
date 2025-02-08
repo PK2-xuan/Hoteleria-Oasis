@@ -1,0 +1,604 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Cargando...</title>
+        <link rel="icon" href="ico.png" />
+        <!-- boostrap -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+            />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- font google -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <!--   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC&display=swap;" rel="stylesheet" />-->
+
+
+        <!-- ======== CSS ======== -->
+        <link rel="stylesheet" href="css/AdmAlonestyle.css" />
+
+        <!-- ===== Boxicons CSS ===== -->
+        <link
+            href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+            rel="stylesheet"
+            />
+
+        <!-- Fontawesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+            />
+
+        <script
+            type="text/javascript"
+            src="http://code.jquery.com/jquery.js"
+        ></script>
+    </h:head>
+
+
+    <style>
+        .img-thumbnail {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+        }
+
+        .badge-custom {
+            background-color: #ff6b6b;
+        }
+
+        @media (min-width: 600px) {
+            .size-xuan-design-img img {
+                height: 120px;
+                width: 200px;
+            }
+        }
+
+        .table-img {
+            width: 150px;
+            height: 90px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .style-desing-xuan-text-table {
+            width: 210px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+
+
+    <h:body>
+        <h:form enctype="multipart/form-data"   >
+            <nav class="sidebar close">
+                <header>
+                    <div class="image-text">
+                        <span class="image">
+                            <img src="logo2.png" alt="" />
+                        </span>
+
+                        <div class="text logo-text">
+                            <span class="name">Oasis</span>
+                            <span class="profession">Administrador</span>
+                        </div>
+                    </div>
+
+                    <i class="bx bx-chevron-right toggle" style="margin-top: 4rem"></i>
+                </header>
+
+                <div class="menu-bar">
+                    <div class="menu">
+                        <!-- <li class="search-box">
+                                  <i class='bx bx-search icon'></i>
+                                  <input type="text" placeholder="Buscar...">
+                              </li> -->
+
+                        <ul class="menu-links list-unstyled">
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/admin_oasis.xhtml">
+                                    <i class="bx bx-home-alt icon"></i>
+                                    <span class="text nav-text">Inicio</span>
+                                </a>
+                            </li>
+                            <!-- <li class="nav-link">
+                              <a href="#" data-page="Usuario.html">
+                                <i class="bx bxs-user icon"></i>
+                                <span class="text nav-text">Usuarios</span>
+                              </a>
+                            </li> -->
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/usuario_admi.xhtml">
+                                    <i class="bx bxs-user icon"></i>
+                                    <span class="text nav-text">Usuarios</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="api.xhtml">
+                                    <i class='bx bxl-spring-boot icon'></i>
+                                    <span class="text nav-text">API Roles</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/reservas_admi.xhtml">
+                                    <i class="fa-regular fa-calendar-days icon"></i>
+                                    <span class="text nav-text">Reservaciones</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/habitaciones_admi.xhtml">
+                                    <i class="fa-solid fa-bed icon"></i>
+                                    <span class="text nav-text">Habitaciones</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/categoria_admi.xhtml">
+                                    <i class="fa-solid fa-list icon"></i>
+                                    <span class="text nav-text">Categoria</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-link">
+                                <a href="http://localhost:8080/ProyectHoteleriaOasis/comentario_admi.xhtml">
+                                    <i class="fa-solid fa-comment icon"></i>
+                                    <span class="text nav-text">Comentarios</span>
+                                </a>
+                            </li>
+
+                            <li class="search-box">
+                                <!-- <i class='bx bx-search icon'></i>
+                                          <input type="text" placeholder="Buscar..."> -->
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bottom-content">
+                        <ul class="list-unstyled">
+                            <li class="">
+                                <a href="#">
+                                    <i class="bx bx-log-out icon"></i>
+                                    <h:commandButton value="Cerrar Sesión" class="text nav-text btn" action="#{userController.logout}" />
+                                </a>
+                            </li>
+
+                            <li class="mode">
+                                <div class="sun-moon">
+                                    <i class="bx bx-moon icon moon"></i>
+                                    <i class="bx bx-sun icon sun"></i>
+                                </div>
+                                <span class="mode-text text">Dark mode</span>
+
+                                <div class="toggle-switch">
+                                    <span class="switch"></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <section class="home">
+                <nav class="navbar">
+                    <div
+                        class="container-md d-flex justify-content-end align-items-center px-4"
+                        >
+                        <h:graphicImage value="image/#{usuarioBean.usuario.path}"  width="38"
+                                        height="38"
+                                        class="d-inline-block align-text-top rounded-circle mr-3"/>
+                        <div class="color-text-navbar">
+                            <p class="mb-0 fw-bold" style="height: 20px">#{usuarioBean.usuario.nombre} #{usuarioBean.usuario.apellido}</p>
+                            <span class="fw-light">Admin</span>
+                        </div>
+
+                        <li class="nav-item dropdown" style="list-style: none">
+                            <a
+                                class="nav-link"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                >
+                                <i class="fa-solid fa-gear fa-lg" id="gear-icon"></i>
+                            </a>
+                            <!-- Dropdown -->
+                            <ul
+                                class="dropdown-menu dropdown-menu-end mt-3"
+                                aria-labelledby="gear-icon"
+                                >
+                                <li><a class="dropdown-item" href="#">Tu perfil</a></li>
+                                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            </ul>
+                        </li>
+                    </div>
+                </nav>
+
+                <div class="text" style="height: 86.8vh; overflow-y: auto">
+                    <div class="design-border-user-xuan pt-4 px-4">
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card card-profile">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div
+                                                    class="col-md-3 col-sm-3 col-4 d-flex justify-content-center align-items-center"
+                                                    >
+                                                    <img
+                                                        src="img/ico/okidoki.jpg"
+                                                        class="rounded-circle img-thumbnail"
+                                                        alt="Profile Picture"
+                                                        />
+                                                </div>
+
+                                                <div class="col-md-6 col-sm-6 col-6">
+                                                    <h5 class="card-title mt-2">Xuan Camacho</h5>
+                                                    <p class="card-text">#Pk2-ñññññ</p>
+                                                </div>
+
+                                                <div
+                                                    class="col-md-3 col-sm-3 col-2 d-flex justify-content-center align-items-center"
+                                                    >
+                                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card mt-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Xuan Camacho</h5>
+                                            <span class="badge badge-custom float-end">BOOKED</span>
+                                            <p class="card-text text-muted small">#Pk2-ñññññ</p>
+
+                                            <hr />
+                                            <div class="row mb-2">
+                                                <div class="col-md-6 mb-3">
+                                                    <p class="mb-2 text-muted small">Type</p>
+                                                    <p class="mb-0">
+                                                        <i
+                                                            class="fa-solid fa-bed fa-lg"
+                                                            style="color: #ff6b6b; margin-right: 1rem"
+                                                            ></i
+                                                        >Double Bed
+                                                    </p>
+                                                </div>
+
+                                                <div class="col-md-6 mb-1">
+                                                    <p class="mb-2 text-muted small">Room Capacity</p>
+                                                    <p class="mb-0">
+                                                        <i
+                                                            class="fa-regular fa-user fa-lg"
+                                                            style="color: #ff6b6b; margin-right: 1rem"
+                                                            ></i
+                                                        >2 - 4 Person
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-4">
+                                                <div class="col-md-12 mb-1">
+                                                    <p class="mb-2 text-muted small">Date Booking</p>
+                                                    <p class="mb-0">
+                                                        <i
+                                                            class="fa-regular fa-calendar fa-lg"
+                                                            style="color: #ff6b6b; margin-right: 1rem"
+                                                            ></i>
+                                                        {calendar.incio} | {calendar.fin}
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-3 text-center">
+                                                <p class="mb-3 text-muted small">Servicios</p>
+                                                <div class="col-md-6 col-sm-6 col-6">
+                                                    <p class="mb-3">
+                                                        <i
+                                                            class="fa-solid fa-circle-check me-3"
+                                                            style="color: #63e6be"
+                                                            ></i
+                                                        >Shower
+                                                    </p>
+                                                    <p class="mb-3">
+                                                        <i
+                                                            class="fa-solid fa-circle-check me-3"
+                                                            style="color: #63e6be"
+                                                            ></i
+                                                        >Shower
+                                                    </p>
+                                                    <p class="mb-2">
+                                                        <i
+                                                            class="fa-solid fa-circle-check me-3"
+                                                            style="color: #63e6be"
+                                                            ></i
+                                                        >Shower
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6 col-sm-6 col-6">
+                                                    <p class="mb-3">
+                                                        <i
+                                                            class="fa-solid fa-circle-check me-3"
+                                                            style="color: #63e6be"
+                                                            ></i
+                                                        >Shower
+                                                    </p>
+                                                    <p class="mb-3">
+                                                        <i
+                                                            class="fa-solid fa-circle-check me-3"
+                                                            style="color: #63e6be"
+                                                            ></i
+                                                        >Shower
+                                                    </p>
+                                                    <p class="mb-3">
+                                                        <i
+                                                            class="fa-solid fa-circle-check me-3"
+                                                            style="color: #63e6be"
+                                                            ></i
+                                                        >Shower
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="text-center mt-3 mb-2">
+                                                <a href="" class="text-decoration-none"
+                                                   >View More <i class="bi bi-caret-down-fill"></i
+                                                    ></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-8">
+                                    <div
+                                        id="carouselExampleIndicators"
+                                        class="carousel slide"
+                                        data-bs-ride="carousel"
+                                        >
+                                        <div class="carousel-indicators"></div>
+                                        <div class="carousel-inner"></div>
+                                        <button
+                                            class="carousel-control-prev"
+                                            type="button"
+                                            data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide="prev"
+                                            >
+                                            <span
+                                                class="carousel-control-prev-icon"
+                                                aria-hidden="true"
+                                                ></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button
+                                            class="carousel-control-next"
+                                            type="button"
+                                            data-bs-target="#carouselExampleIndicators"
+                                            data-bs-slide="next"
+                                            >
+                                            <span
+                                                class="carousel-control-next-icon"
+                                                aria-hidden="true"
+                                                ></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="mt-3">
+                                        <div
+                                            class="d-flex justify-content-between size-xuan-design-img"
+                                            >
+                                            <img
+                                                src="img/hero/hero-2.jpg"
+                                                class="img-thumbnail"
+                                                alt="Room Image"
+                                                />
+                                            <img
+                                                src="img/hero/hero-1.jpg"
+                                                class="img-thumbnail"
+                                                alt="Room Image"
+                                                />
+                                            <img
+                                                src="img/hero/hero-3.jpg"
+                                                class="img-thumbnail"
+                                                alt="Room Image"
+                                                />
+                                            <img
+                                                src="img/hero/hero-2.jpg"
+                                                class="img-thumbnail"
+                                                alt="Room Image"
+                                                />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="container mt-5">
+                            <h3>Historial de Reservaciones</h3>
+                            <div class="table-responsive mt-4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <!-- <th><input type="checkbox" /></th> -->
+                                            <th>Nombre de la habitación</th>
+                                            <th>Tipo de cama</th>
+                                            <th>Piso de habitación</th>
+                                            <th>Facilidad de habitación</th>
+                                            <th>Fecha de reserva</th>
+                                            <th>Fecha de reserva</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <!-- <td><input type="checkbox" /></td> -->
+                                            <td
+                                                class="justify-content-center d-flex justify-content-between"
+                                                >
+                                                <img
+                                                    src="img/room/room-b4.jpg"
+                                                    class="d-block w-100 table-img"
+                                                    alt="Room Image"
+                                                    />
+                                                <p class="style-desing-xuan-text-table ps-3">
+                                                    #0005<br />Queen A-0001
+                                                </p>
+                                            </td>
+                                            <td class="align-middle">Single Bed</td>
+                                            <td class="align-middle">Floor G-05</td>
+                                            <td class="align-middle" style="max-width: 280px">
+                                                AC, Shower, Double Bed, Towel, Bathup, Coffee Set, LED TV,
+                                                Wifi
+                                            </td>
+                                            <td class="align-middle">Oct 29th, 2020<br />08:29 AM</td>
+                                            <td class="align-middle">Oct 29th, 2020<br />08:29 AM</td>
+                                            <td class="text-center align-middle">
+                                                <i class="fa-solid fa-ellipsis"></i>
+                                            </td>
+                                        </tr>
+                                        <!-- Repeat similar blocks for other rows as needed -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-between align-items-center p-2">
+                                <div>Mostrando 1 a 3 de 3 entradas</div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination mb-0">
+                                        <li class="page-item">
+                                            <a
+                                                class="page-link"
+                                                href="#"
+                                                aria-label="Previous"
+                                                style="border-radius: 50%"
+                                                >
+                                                <span aria-hidden="true">&lt;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item">
+                                            <a
+                                                class="page-link"
+                                                href="#"
+                                                aria-label="Next"
+                                                style="border-radius: 50%"
+                                                >
+                                                <span aria-hidden="true">&gt;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="text-center py-2 footer-desing-xuan">
+                    <div class="container">
+                        <p class="mb-0">
+                            Copyright © 2024 Cesar. Diseñado con
+                            <i class="fa-regular fa-heart" style="color: #ff1a1a"></i> para el curso Diseño web Integrado, subido en Github.
+                        </p>
+                    </div>
+                </footer>
+            </section>
+
+            <script>
+                const body = document.querySelector("body"),
+                        sidebar = body.querySelector("nav"),
+                        toggle = body.querySelector(".toggle"),
+                        searchBtn = body.querySelector(".search-box"),
+                        modeSwitch = body.querySelector(".toggle-switch"),
+                        modeText = body.querySelector(".mode-text");
+
+                toggle.addEventListener("click", () => {
+                    sidebar.classList.toggle("close");
+                });
+
+                searchBtn.addEventListener("click", () => {
+                    sidebar.classList.remove("close");
+                });
+
+                modeSwitch.addEventListener("click", () => {
+                    body.classList.toggle("dark");
+
+                    if (body.classList.contains("dark")) {
+                        modeText.innerText = "Light mode";
+                    } else {
+                        modeText.innerText = "Dark mode";
+                    }
+                });
+            </script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    setTimeout(function () {
+                        document.title = "Administrador | Historial de Reservaciones";
+                    }, 350);
+                });
+            </script>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const imgContainer = document.querySelector(".size-xuan-design-img");
+                    const indicatorsContainer = document.querySelector(
+                            ".carousel-indicators"
+                            );
+                    const innerContainer = document.querySelector(".carousel-inner");
+
+                    const images = imgContainer.querySelectorAll("img");
+
+                    images.forEach((img, index) => {
+                        // Create indicators
+                        const button = document.createElement("button");
+                        button.type = "button";
+                        button.setAttribute("data-bs-target", "#carouselExampleIndicators");
+                        button.setAttribute("data-bs-slide-to", index);
+                        button.setAttribute("aria-label", `Slide ${index + 1}`);
+                        if (index === 0) {
+                            button.classList.add("active");
+                            button.setAttribute("aria-current", "true");
+                        }
+                        indicatorsContainer.appendChild(button);
+
+                        // Create carousel items
+                        const div = document.createElement("div");
+                        div.classList.add("carousel-item");
+                        if (index === 0) {
+                            div.classList.add("active");
+                        }
+                        const imgClone = img.cloneNode();
+                        imgClone.classList.add("d-block", "w-100");
+                        imgClone.style.maxWidth = "100%";
+                        imgClone.style.height = "450px";
+                        imgClone.style.objectFit = "cover";
+                        div.appendChild(imgClone);
+                        innerContainer.appendChild(div);
+                    });
+
+                    const carousel = new bootstrap.Carousel(
+                            document.querySelector("#carouselExampleIndicators")
+                            );
+                });
+            </script>
+        </h:form>
+    </h:body>
+</html>
+

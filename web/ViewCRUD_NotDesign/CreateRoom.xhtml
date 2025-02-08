@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Registrar Habitación</title>
+    </h:head>
+    <h:body>
+        <h1>Registrar Habitación</h1>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="numero_habitacion" value="Número de Habitación:" />
+                <h:inputText id="numero_habitacion" value="#{roomController.habitacion.numero_habitacion}" required="true" />
+                <h:message for="numero_habitacion" />
+
+                <h:outputLabel for="cantidad" value="Cantidad:" />
+                <h:inputText id="cantidad" value="#{roomController.habitacion.cantidad}" required="true" />
+                <h:message for="cantidad" />
+
+                <h:outputLabel for="capacidad" value="Capacidad:" />
+                <h:inputText id="capacidad" value="#{roomController.habitacion.capacidad}" required="true" />
+                <h:message for="capacidad" />
+
+                <h:outputLabel for="cama" value="Tipo de Cama:" />
+                <h:inputText id="cama" value="#{roomController.habitacion.cama}" required="true" />
+                <h:message for="cama" />
+
+                <h:outputLabel for="servicios" value="Servicios:" />
+                <h:inputText id="servicios" value="#{roomController.habitacion.servicios}" required="true" />
+                <h:message for="servicios" />
+
+                <h:outputLabel for="piso" value="Piso:" />
+                <h:inputText id="piso" value="#{roomController.habitacion.piso}" required="true" />
+                <h:message for="piso" />
+
+                <h:outputLabel for="espacio" value="Espacio:" />
+                <h:inputText id="espacio" value="#{roomController.habitacion.espacio}" required="true" />
+                <h:message for="espacio" />
+
+                <h:outputLabel for="precio" value="Precio:" />
+                <h:inputText id="precio" value="#{roomController.habitacion.precio}" required="true" />
+                <h:message for="precio" />
+
+                <h:outputLabel for="categoria" value="Categoría:" />
+                <h:selectOneMenu id="categoria" value="#{roomController.habitacion.categoria.id_categoria}">
+                    <f:selectItem itemLabel="Seleccionar categoría" itemValue="#{null}" noSelectionOption="true" />
+                    <f:selectItems value="#{catController.ltsCategorias}" var="categoria" itemLabel="#{categoria.nombre_categoria}" itemValue="#{categoria.id_categoria}" />
+                </h:selectOneMenu>
+
+            </h:panelGrid>
+            <h:commandButton value="Registrar" action="#{roomController.registrar}" />
+        </h:form>
+    </h:body>
+</html>

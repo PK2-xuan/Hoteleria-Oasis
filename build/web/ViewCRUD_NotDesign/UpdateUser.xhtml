@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Editar Usuario</title>
+    </h:head>
+    <h:body>
+        <h1>Editar Usuario</h1>
+
+        <h:form>
+            <h:panelGrid columns="3">
+
+                <h:outputLabel for="id_usuario" value="id_usuario:" />
+                <h:inputText id="id_usuario" value="#{userController.usuario.id_usuario}" required="true" />
+                <h:message for="id_usuario" />
+
+                <h:outputLabel for="nombre" value="Nombre:" />
+                <h:inputText id="nombre" value="#{userController.usuario.nombre}" required="true" />
+                <h:message for="nombre" />
+
+                <h:outputLabel for="apellido" value="Apellido:" />
+                <h:inputText id="apellido" value="#{userController.usuario.apellido}" required="true" />
+                <h:message for="apellido" />
+
+                <h:outputLabel for="dni" value="DNI:" />
+                <h:inputText id="dni" value="#{userController.usuario.dni}" required="true" />
+                <h:message for="dni" />
+
+                <h:outputLabel for="email" value="Email:" />
+                <h:inputText id="email" value="#{userController.usuario.email}" required="true" />
+                <h:message for="email" />
+
+                <h:outputLabel for="telefono" value="Teléfono:" />
+                <h:inputText id="telefono" value="#{userController.usuario.telefono}" required="true" />
+                <h:message for="telefono" />
+
+                <h:outputLabel for="username" value="Username:" />
+                <h:inputText id="username" value="#{userController.usuario.username}" required="true" />
+                <h:message for="username" />
+
+                <h:outputLabel for="password" value="Password:" />
+                <h:inputText id="password" value="#{userController.usuario.password}" required="true" />
+                <h:message for="password" />
+
+                <h:outputLabel for="estado" value="Estado:" />
+                <h:selectOneMenu id="estado" value="#{userController.usuario.estado}" required="true">
+                    <f:selectItem itemLabel="Seleccione un estado" itemValue="" />
+                    <f:selectItem itemLabel="ACTIVO" itemValue="activo" />
+                    <f:selectItem itemLabel="PASIVO" itemValue="pasivo" />
+                </h:selectOneMenu>
+
+                <br></br>
+
+                <h:outputLabel for="sexo" value="Sexo:" />
+                <h:selectOneMenu id="sexo" value="#{userController.usuario.sexo}">
+                    <f:selectItem itemLabel="Seleccionar" itemValue="" />
+                    <f:selectItem itemLabel="Masculino" itemValue="M" />
+                    <f:selectItem itemLabel="Femenino" itemValue="F" />
+                </h:selectOneMenu>
+
+                <br></br>
+                <h:outputLabel for="rol" value="Rol:" />
+                <h:selectOneMenu id="rol" value="#{userController.usuario.rol.id_rol}"><!-- almacena la lista -->
+                    <f:selectItem itemLabel="Seleccionar rol" itemValue="#{null}" noSelectionOption="true" />
+                    <f:selectItems value="#{rolController.ltsRoles}" var="rol" itemLabel="#{rol.nombre_rol}" itemValue="#{rol.id_rol}" />
+                </h:selectOneMenu>
+
+                <br></br>
+            </h:panelGrid>
+            <h:commandButton value="Actualizar" action="#{userController.actualizar()}" />
+        </h:form>
+    </h:body>
+</html>

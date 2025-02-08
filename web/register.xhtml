@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cargando...</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            />
+    </h:head>
+
+    <style>
+        .gradient-custom-2 {
+            /* background: #fccb90; */
+            background: -webkit-linear-gradient(to right, #c0b29a, #bdb38e, #b4a982);
+            background: linear-gradient(to right, #c0b29a, #bdb38e, #b4a982);
+        }
+
+        @media (min-width: 768px) {
+            .gradient-form {
+                height: 100vh !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .gradient-custom-2 {
+                border-top-right-radius: 0.3rem;
+                border-bottom-right-radius: 0.3rem;
+            }
+        }
+    </style>
+
+    <h:body>
+        <section class="h-100 gradient-form" style="background-color: #bcaaa4">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-xl-10">
+                        <div class="card rounded-3 text-black">
+                            <div class="row g-0">
+                                <div class="col-lg-6">
+                                    <div class="card-header text-center mt-4 pb-4">
+                                        <h3>Registro de Usuario</h3>
+                                    </div>
+                                    <div class="card-body p-md-5 mx-md-4" style="margin-top: -2rem;">
+                                        <h:form>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div data-mdb-input-init="true" class="form-outline">
+                                                        <h:outputLabel for="nombre" value="Nombre:" class="form-label" />
+                                                        <h:inputText id="nombre" value="#{userController.usuario.nombre}" required="true" class="form-control" />     
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div data-mdb-input-init="true" class="form-outline">
+                                                        <h:outputLabel for="apellido" value="Apellido:" class="form-label" />
+                                                        <h:inputText id="apellido" value="#{userController.usuario.apellido}" required="true" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div data-mdb-input-init="true" class="form-outline">
+                                                        <h:outputLabel for="dni" value="DNI:" class="form-label" />
+                                                        <h:inputText id="dni" value="#{userController.usuario.dni}" required="true" class="form-control" />
+                                                        <h:message for="dni" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div data-mdb-input-init="true" class="form-outline mb-1">
+                                                        <h:outputLabel for="sexo" value="Sexo:" class="form-label" />
+                                                        <h:selectOneMenu id="sexo" value="#{userController.usuario.sexo}" class="form-control">
+                                                            <f:selectItem itemLabel="Seleccionar" itemValue="" class="form-control" />
+                                                            <f:selectItem itemLabel="Masculino" itemValue="M" class="form-control" />
+                                                            <f:selectItem itemLabel="Femenino" itemValue="F" class="form-control" />
+                                                        </h:selectOneMenu>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row ">
+                                                <div class="col-md-6">
+                                                    <div data-mdb-input-init="true" class="form-outline">
+                                                        <h:outputLabel for="telefono" value="Teléfono:" class="form-label" />
+                                                        <h:inputText id="telefono" value="#{userController.usuario.telefono}" required="true" class="form-control" />
+                                                        <h:message for="telefono" />
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div data-mdb-input-init="true" class="form-outline">
+                                                <h:outputLabel for="email" value="Email:" class="form-label" />
+                                                <h:inputText id="email" value="#{userController.usuario.email}" required="true" class="form-control" />
+
+                                            </div>
+
+                                            <div data-mdb-input-init="true" class="form-outline">
+                                                <h:outputLabel for="username" value="Username:" class="form-label" />
+                                                <h:inputText id="username" value="#{userController.usuario.username}" required="true" class="form-control" />
+
+                                            </div>
+
+                                            <div data-mdb-input-init="true" class="form-outline mb-4">
+                                                <h:outputLabel for="password" value="Password:" class="form-label" />
+                                                <h:inputSecret id="password" value="#{userController.usuario.password}" required="true" class="form-control" />
+
+                                            </div>
+
+                                            <div class="text-center pt-1">
+                                                <h:commandButton value="Registrar" action="#{userController.register()}" class="btn btn-outline-secondary btn-block fa-lg gradient-custom-2 mb-3" />
+                                                <a type="submit" href="logging.xhtml">Retroceder</a>
+                                            </div>
+                                        </h:form>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 d-flex align-items-center px-0">
+                                    <picture class="w-100 h-100">
+                                        <img
+                                            src="img/ico/login.jpg"
+                                            class="img-fluid w-auto h-100 object-fit-cover"
+                                            />
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            window.addEventListener("load", function () {
+                document.title = "Registro de usuario"; // Cambia el título de la página
+            });
+        </script>
+    </h:body>
+</html>
+
